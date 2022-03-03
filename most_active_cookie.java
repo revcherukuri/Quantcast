@@ -11,7 +11,6 @@ import java.util.Map;
 
 public class most_active_cookie {
     public static void main (String [] args) {
-//        String path = "/Users/revanthcherukuri/Desktop/cookie_log.csv";
         String path = args[0];
         String line = "";
 
@@ -44,7 +43,7 @@ public class most_active_cookie {
 
             while ((line = br.readLine()) != null) {
                 String [] cookieInfo = line.split(",");
-                String date = cookieInfo[1].substring(0, 10);
+                String date = cookieInfo[1].substring(0, 10);   //can also use Date class
                 if (date.equals(specifiedDay)) {
                     cookieFrequency.put(cookieInfo[0], cookieFrequency.getOrDefault(cookieInfo[0], 0) + 1);
                 }
